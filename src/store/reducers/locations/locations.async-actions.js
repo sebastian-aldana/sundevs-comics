@@ -19,7 +19,7 @@ export const asyncGetLocations = (urls) => async (dispatch) => {
     dispatch(
       FeedbackActions.setFeedback({
         type: "error",
-        message: `cant get locations: ${error}`,
+        message: `cant get locations: limit of request has ben reached`,
       })
     );
   } finally {

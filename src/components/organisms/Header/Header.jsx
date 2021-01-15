@@ -49,7 +49,7 @@ const Header = ({ title, showViewOptions }) => {
             className={styles.menuButton}
             color="inherit"
             aria-label="open drawer"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/issues")}
           >
             <img src="/static/comic-vine.png" width="90" />
           </IconButton>

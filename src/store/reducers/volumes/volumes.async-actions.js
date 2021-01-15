@@ -23,7 +23,7 @@ export const asyncGetVolume = (id) => async (dispatch) => {
     dispatch(
       FeedbackActions.setFeedback({
         type: "error",
-        message: `cant get volumen ${error}`,
+        message: `cant get volumen limit of request has ben reached`,
       })
     );
   } finally {

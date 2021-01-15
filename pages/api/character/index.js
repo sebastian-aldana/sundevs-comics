@@ -18,7 +18,6 @@ const getCharacter = async (res, body) => {
     }, initialValue);
     res.send(response);
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };

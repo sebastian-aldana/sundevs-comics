@@ -19,7 +19,7 @@ export const asyncGetConcepts = (urls) => async (dispatch) => {
     dispatch(
       FeedbackActions.setFeedback({
         type: "error",
-        message: `cant get concepts: ${error}`,
+        message: `cant get concepts: limit of request has ben reached`,
       })
     );
   } finally {

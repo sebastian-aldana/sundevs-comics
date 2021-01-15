@@ -19,10 +19,9 @@ export const asyncGetCharacters = (urls) => async (dispatch) => {
     dispatch(
       FeedbackActions.setFeedback({
         type: "error",
-        message: `cant get characters ${error}`,
+        message: `cant get characters: limit of request has ben reached `,
       })
     );
-    console.log(error);
   } finally {
     dispatch(FeedbackActions.setIsLoading(false));
   }

@@ -11,7 +11,6 @@ export const asyncGetIssues = () => async (dispatch) => {
       issues: { currentPage, page },
     } = store.getState();
     const numberOfPage = currentPage - 1;
-    console.log(page);
     if (!page[numberOfPage]) {
       const { data } = await axios.get(
         `${apiPrefix}?currentPage=${numberOfPage}`
@@ -32,7 +31,7 @@ export const asyncGetIssues = () => async (dispatch) => {
     dispatch(
       FeedbackActions.setFeedback({
         type: "error",
-        message: `cant get issues: ${error}`,
+        message: `cant get issues: limit of request has ben reached}`,
       })
     );
   } finally {
