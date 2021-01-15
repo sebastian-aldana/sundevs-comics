@@ -7,10 +7,7 @@ const IssuesPagination = ({ page, handleChange, count }) => {
       count={count}
       page={page}
       onChange={handleChange}
-      showFirstButton
-      showLastButton
       size="large"
-      siblingCount={10}
     />
   );
 };

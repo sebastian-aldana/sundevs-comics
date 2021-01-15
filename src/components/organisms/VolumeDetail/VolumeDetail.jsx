@@ -4,8 +4,9 @@ import VolumeSectionDetail from "_molecules_/VolumeSectionDetail/VolumeSectionDe
 import useStyles from "./VolumeDetail.styles";
 
 const VolumeDetail = ({ volume }) => {
-  const styles = useStyles();
-  console.log(volume);
+  const styles = useStyles({
+    image: volume ? volume.image.original_url : "",
+  })();
   return (
     <div className={styles.container}>
       <div className={styles.detailsContainer}>
@@ -17,16 +18,33 @@ const VolumeDetail = ({ volume }) => {
             }}
           />
         </div>
-        {volume && volume.concepts && <VolumeSectionDetail title="Concepts" />}
+        {volume && volume.concepts && (
+          <VolumeSectionDetail
+            title="Concepts"
+            options={volume.concepts}
+            type="concept"
+          />
+        )}
         {volume && volume.locations && (
-          <VolumeSectionDetail title="Locations" />
+          <VolumeSectionDetail
+            title="Locations"
+            options={volume.locations}
+            type="location"
+          />
         )}
         {volume && volume.characters && (
-          <VolumeSectionDetail title="Characters" />
+          <VolumeSectionDetail
+            title="Characters"
+            options={volume.characters}
+            type="character"
+          />
         )}
       </div>
       <div className={styles.imageContainer}>
-        <img src={volume ? volume.image.original_url : ""} alt="" />
+        <img
+          className={styles.image}
+          src={volume ? volume.image.original_url : ""}
+        />
       </div>
     </div>
   );

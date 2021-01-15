@@ -12,7 +12,9 @@ const Issue = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(asyncGetVolume(id));
+    if (id) {
+      dispatch(asyncGetVolume(id));
+    }
   }, [id]);
   return (
     <>

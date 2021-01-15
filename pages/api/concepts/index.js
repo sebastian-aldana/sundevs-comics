@@ -3,7 +3,7 @@ import axios from "_utils_/network/request";
 const API = process.env.API_URL;
 const API_KEY = process.env.API_KEY;
 
-const getCharacter = async (res, body) => {
+const getConcept = async (res, body) => {
   try {
     const promises = body.map((url) =>
       axios().get(`${url}?api_key=${API_KEY}&format=json`)
@@ -28,7 +28,7 @@ export default async (req, res) => {
   try {
     switch (method) {
       case "POST": {
-        await getCharacter(res, body);
+        await getConcept(res, body);
       }
 
       default:

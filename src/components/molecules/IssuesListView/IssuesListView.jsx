@@ -10,9 +10,9 @@ const IssuesListView = ({ image, date, name, onIssueClick }) => {
         <div>
           <img className={styles.image} src={image} alt="" />
         </div>
-        <div>
-          <Typography variant="h6">{name || ""}</Typography>
-          <p>{date}</p>
+        <div className={styles.titleContainer}>
+          <Typography variant="h3">{name || ""}</Typography>
+          <Typography variant="h4">{date || ""}</Typography>
         </div>
       </ListItem>
       <Divider />

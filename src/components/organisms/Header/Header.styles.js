@@ -4,16 +4,29 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  appbar: {
-    padding: " 0px 50px",
+  container: {
+    "@media (max-width: 1200px)": {
+      display: "grid",
+      gridGap: "5px",
+      marginBottom: "3%",
+    },
   },
-  titleContainer: {
+  appbar: {
+    padding: " 0px 20vh",
+    display: "flex",
+    "@media (max-width: 1200px)": {
+      padding: " 0px 10vh",
+    },
+    "@media (max-width: 900px)": {
+      padding: " 0px 8vh",
+    },
+  },
+  switchContainer: {
     display: "Flex",
     justifyContent: "center",
     alignItems: "center",
-    "@media (max-width: 600px)": {
-      width: "100%",
-      justifyContent: "flex-start",
+    "@media (max-width: 800px)": {
+      display: "none",
     },
   },
   menuButton: {
@@ -21,9 +34,11 @@ export default makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
+    },
+    "@media (max-width: 1200px)": {
+      justifySelf: "center",
     },
   },
   search: {

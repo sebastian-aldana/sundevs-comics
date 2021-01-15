@@ -2,7 +2,7 @@ import { handleAction } from "redux-actions";
 import { Actions } from "./issues.actions";
 
 const initialState = {
-  page: { 0: [] },
+  page: {},
   isListView: false,
   currentPage: 1,
   pagesNumber: 0,
@@ -13,7 +13,7 @@ const setIssuesData = handleAction(
   Actions.setIssuesData,
   (state, { payload }) => ({
     ...state,
-    page: { [payload.data.offset / 100]: payload.data.results },
+    page: { ...state.page, [payload.data.offset / 100]: payload.data.results },
     pagesNumber: payload.pagesNumber,
   }),
   initialState

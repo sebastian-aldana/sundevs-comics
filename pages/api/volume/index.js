@@ -5,7 +5,6 @@ const API_KEY = process.env.API_KEY;
 
 const getComic = async (res, id) => {
   try {
-    console.log(`${API}/issue/${id}/?api_key=${API_KEY}&format=json`);
     const { data } = await axios().get(
       `${API}/volume/${id}/?api_key=${API_KEY}&format=json`
     );
